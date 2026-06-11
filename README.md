@@ -2,6 +2,10 @@
 
 > **Heal once. Replay forever. Zero LLM in CI.**
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/mk668a/playwright-anchor/main/demo/demo.gif" alt="A broken locator fails red, llama3.2 heals it once locally, the heal lands as a reviewable git diff, and CI replays it green with the LLM endpoint dead" width="100%">
+</p>
+
 When a Playwright locator breaks, `playwright-anchor` asks **your own local LLM** (Ollama, llama.cpp, LM Studio — anything OpenAI-compatible) to find the element **once**, derives a durable selector deterministically, and writes it to `.playwright-anchors.json` — a file you **review and commit like a lockfile**. Self-healing as a git diff, not a CI behavior:
 
 ```diff

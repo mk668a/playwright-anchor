@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <header><h1>Shop</h1></header>
+    <main>
+      <a href="/cart">Cart</a>
+      <!-- the button used to be <button id="old-buy-button"> — a refactor renamed it -->
+      <button data-testid="buy-now">Buy now</button>
+      <output id="status"></output>
+    </main>
+    <script>
+      document.querySelector('[data-testid="buy-now"]').addEventListener('click', () => {
+        document.getElementById('status').textContent = 'purchased';
+      });
+    </script>
+  </body>
+</html>

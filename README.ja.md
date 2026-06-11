@@ -2,6 +2,10 @@
 
 > **一度直して、ずっと再生。CI で LLM ゼロ。**
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/mk668a/playwright-anchor/main/demo/demo.gif" alt="壊れたロケーターが red になり、llama3.2 がローカルで一度だけ修復、heal は git diff として届き、CI は LLM エンドポイントが死んでいても green で replay する" width="100%">
+</p>
+
 Playwright のロケーターが壊れたとき、`playwright-anchor` は**あなた自身のローカル LLM**(Ollama / llama.cpp / LM Studio など OpenAI 互換なら何でも)に**一度だけ**要素を探させ、durable なセレクタを決定的に導出して `.playwright-anchors.json` に書き込みます — このファイルは **lockfile のように review してコミット**します。self-healing を「CI のランタイム挙動」ではなく「git diff」にする:
 
 ```diff
