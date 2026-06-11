@@ -1,0 +1,68 @@
+{
+  "name": "playwright-anchor",
+  "version": "0.1.0",
+  "description": "Heal broken Playwright locators once with your own local LLM, commit the fix to git, replay forever with zero LLM calls in CI.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "bin": {
+    "playwright-anchor": "./dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "skills",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "test:e2e": "playwright test -c tests/e2e/playwright.config.ts",
+    "test:all": "npm run typecheck && npm run test && npm run build && npm run test:e2e"
+  },
+  "keywords": [
+    "playwright",
+    "self-healing",
+    "locator",
+    "selector",
+    "flaky-tests",
+    "e2e",
+    "testing",
+    "ollama",
+    "local-llm",
+    "ai"
+  ],
+  "author": "mk668a",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mk668a/playwright-anchor.git"
+  },
+  "engines": {
+    "node": ">=18.17"
+  },
+  "peerDependencies": {
+    "@playwright/test": ">=1.59.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.60.0",
+    "@types/node": "^25.9.3",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.8"
+  }
+}

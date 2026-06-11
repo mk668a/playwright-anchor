@@ -1,0 +1,11 @@
+node_modules/
+dist/
+test-results/
+playwright-report/
+tests/e2e/.tmp/
+*.tgz
+*.log
+
+# local-only working docs (never published)
+PLAN.md
+CLAUDE.md
