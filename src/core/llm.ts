@@ -20,8 +20,8 @@ Pick the element the broken selector most likely pointed to, judging by its name
 Reply with ONLY a JSON object, no prose, no code fences:
 {"ref": "e12", "reason": "one short sentence"}
 
-If you are certain a plain CSS selector is better, you may instead reply:
-{"selector": "css-selector-here", "reason": "one short sentence"}
+The "ref" value MUST be one of the [ref=eN] markers present in the snapshot.
+Never write or invent a CSS selector.
 
 If nothing on the page plausibly matches, reply:
 {"ref": null, "reason": "one short sentence"}`;
